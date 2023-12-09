@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .head {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .box {
+            width: 500px;
+            padding: 40px;
+            text-align: center;
+            background-color: #eae2e2;
+            box-shadow: 3px 4px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        input[type='submit'] {
+            background-color: green;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 4px 6px;
+            outline: none;
+        }
+
+        #close {
+            background-color: red;
+            padding: 4px 6px;
+            outline: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            float: right;
+        }
+
+        form {
+            width: 75%;
+            margin: auto;
+        }
+
+        form div {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <h3>Click the below button to login</h3>
+        <button id="show">Login</button>
+    </div>
+
+    <dialog class="box" id="dialogBox">
+        <button id="close">Close</button> 
+
+        <h3>Login Form</h3>
+        <form action="">
+            <div>
+                <label for="user">UserName</label>
+                <input type="text" name="user" id="user" required>
+            </div>
+            <div>
+                <label for="pass">Password</label>
+                <input type="password" name="pass" id="pass" required>
+            </div>
+            <div>
+                <input type="submit" value="Login">
+            </div>
+            
+        </form>
+    </dialog>
+
+    <script>
+        var dialog = document.getElementById("dialogBox");
+
+        document.getElementById("show").onclick = function() {
+            document.body.style.backgroundColor = "#222";
+            dialog.show();
+        }
+
+        document.getElementById("close").onclick = function() {
+            document.body.style.backgroundColor = "#fff";
+            dialog.close();
+        }
+    </script>
+</body>
+</html>
